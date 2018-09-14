@@ -1,5 +1,19 @@
+import httpclient from '@/utils/httpclient'
+import * as counter from '@/api/counter'
+
 const state = {
   main: 0
+}
+
+const actions = {
+  // do something async
+  someAsyncTask ({ commit }) {
+    httpclient.get(counter.demo, {
+      a: 1
+    }).finally(() => {
+      commit('INCREMENT_MAIN_COUNTER')
+    })
+  }
 }
 
 const mutations = {
@@ -11,15 +25,9 @@ const mutations = {
   }
 }
 
-const actions = {
-  someAsyncTask ({ commit }) {
-    // do something async
-    commit('INCREMENT_MAIN_COUNTER')
-  }
-}
-
 export default {
+  namespaced: true,
   state,
-  mutations,
-  actions
+  actions,
+  mutations
 }
