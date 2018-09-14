@@ -26,5 +26,19 @@ module.exports = {
         }
         return options
       })
+
+    // 全局引入主题样式
+    // config.module
+    //   .rule('scss')
+    //   .test(/\.scss$/)
+    //   .use('sass-resources-loader')
+    //   .loader('sass-resources-loader')
+    //   .tap(options => {
+    //     options = {
+    //       resources: resolve('src/assets/styles/theme.scss')
+    //     }
+    //     return options
+    //   })
+    //   .end()
   }
 }
