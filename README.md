@@ -1,31 +1,24 @@
 # vue-cli3-seed
 
-## Project setup
+> Vue Cli3 种子项目
+
+## Build Setup
 ```
+# Project setup
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
+# Compiles and hot-reloads for development
 yarn run serve
-```
 
-### Compiles and minifies for production
-```
+# Compiles and minifies for production
 yarn run build
-```
 
-### Lints and fixes files
-```
+# Lints and fixes files
 yarn run lint
-```
 
-### Run your unit tests
-```
+# Run your unit tests
 yarn run test:unit
-```
 
-### Run your end-to-end tests
-```
+# Run your end-to-end tests
 yarn run test:e2e
 ```
