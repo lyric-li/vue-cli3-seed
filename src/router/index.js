@@ -3,8 +3,6 @@ import Router from 'vue-router'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css'// progress bar style
 
-import Home from '@/views/Home.vue'
-
 Vue.use(Router)
 
 const router = new Router({
@@ -14,7 +12,7 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
     },
     {
       path: '/about',
