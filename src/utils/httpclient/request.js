@@ -3,8 +3,6 @@ import qs from 'qs'
 import ServiceError from './error'
 import { Message, Loading } from 'element-ui'
 
-console.log('process.env.BASE_API:', process.env)
-
 const request = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   transformRequest: [
