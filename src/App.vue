@@ -9,39 +9,43 @@
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
+        <code v-text="'<el-alert>'"></code>
         below
       </p>
-      <el-button>el-button</el-button>
+      <el-alert
+        title="Element is successfully added to this project"
+        type="success"
+        show-icon>
+      </el-alert>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  created () {
-    this.$store.dispatch('counter/someAsyncTask')
-  }
+  name: 'app'
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $standard-font-color;
+  font-size: $font-size-m;
 }
 #nav {
   padding: 30px;
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: $standard-font-color;
+    &:hover {
+      color: $primary-light-color;
+    }
+    &.router-link-exact-active:hover {
+      color: $primary-light-color;
+    }
     &.router-link-exact-active {
-      color: #42b983;
+      color: $primary-dark-color;
     }
   }
 }
