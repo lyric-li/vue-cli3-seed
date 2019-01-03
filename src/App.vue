@@ -1,29 +1,25 @@
 <template>
   <div id="app">
     <div id="nav">
-      <svg-icon iconClass="github"/>
+      <div class="gitee"
+        @click="toGitee">
+        <svg-icon iconClass="gitee"/>
+      </div>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-alert>'"></code>
-        below
-      </p>
-      <el-alert
-        title="Element is successfully added to this project"
-        type="success"
-        show-icon>
-      </el-alert>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    toGitee () {
+      window.open(`https://gitee.com/lyric-li/vue-cli3-seed`)
+    }
+  }
 }
 </script>
 
@@ -34,8 +30,13 @@ export default {
   font-size: $font-size-m;
 }
 #nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
   a {
+    margin: 0 5px;
+    font-size: 16px;
     font-weight: bold;
     color: $standard-font-color;
     &:hover {
@@ -47,6 +48,9 @@ export default {
     &.router-link-exact-active {
       color: $primary-dark-color;
     }
+  }
+  .gitee {
+    cursor: pointer;
   }
 }
 </style>
