@@ -21,19 +21,35 @@ const router = new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+    },
+    {
+      path: '/404',
+      name: '404',
+      // route level code-splitting
+      // this generates a separate chunk (404.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "404" */ '@/views/404.vue')
     }
   ]
 })
 
 // 全局前置导航守卫
 router.beforeEach((to, from, next) => {
-  NProgress.start() // start progress bar
+  // start progress bar
+  NProgress.start()
+  if (to.matched.length === 0) {
+    next({
+      name: '404',
+      replace: true
+    })
+  }
   next()
 })
 
 // 全局后置导航守卫
 router.afterEach(() => {
-  NProgress.done() // finish progress bar
+  // finish progress bar
+  NProgress.done()
 })
 
 export default router
